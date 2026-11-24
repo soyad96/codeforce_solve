@@ -2,17 +2,9 @@
 using namespace std;
 
 void getdivisor(long long x){
-    long long ev = 0, od = 0;
-    for(long long i = 1; i * i <= x; i++){
-        if(x % i == 0){
-            long long j = x / i;
-            (i % 2 == 0 ? ev : od)++;
-            if(j != i){
-                (j % 2 == 0 ? ev : od)++;
-            }
-        }
-    }
-    cout << (ev != od ? "YES" : "NO") << "\n";
+    if(x&1) cout<<"YES\n";
+    else if(x%4) cout<<"NO\n";
+    else cout<<"YES\n";
 }
 
 int main(){
